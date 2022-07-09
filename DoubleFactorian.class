@@ -1,0 +1,19 @@
+import java.math.BigInteger;
+
+class DoubleFactorial {
+    public static BigInteger calcDoubleFactorial(int n) {
+        if (n == 0 || n == 1 || n < 0) {
+            return BigInteger.ONE;
+        }
+        BigInteger res = BigInteger.ONE;
+        for (BigInteger i = BigInteger.valueOf(n); !i.equals(BigInteger.ZERO) ||
+                !i.equals(BigInteger.ZERO.divide(BigInteger.ONE)); i = i.subtract(BigInteger.TWO)) {
+            if (i.equals(BigInteger.ZERO) || i.equals(BigInteger.ONE)) {
+                return res;
+            } else {
+                res = res.multiply(i);
+            }
+        }
+        return res;
+    }
+}
